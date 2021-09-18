@@ -1,0 +1,228 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.glavniy {
+    background-image: url(../img/fon.jpg);
+    background-size: cover;
+    padding: 100px;
+    height: 100vh;
+}
+/* section {
+
+} */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+}
+header a img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 90px;
+    width: 380px;
+}
+header .toggle {
+    position: relative;
+    width: 60px;
+    height: 45px;
+    background: url(menu.png);
+    background-size: 60px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 10000;
+}
+header .toggle.active {
+    width: 60px;
+    height: 45px;
+    background: url(close.png);
+    background-size: 40px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.navigation {
+    position: absolute;
+    display: flex;
+    right: 150px;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+.navigation.active {
+    opacity: 1;
+    visibility: visible;
+}
+.navigation li {
+    list-style: none;
+}
+.navigation li a {
+    color: rgb(83, 202, 186);
+    text-decoration: none;
+    font-size: 16px;
+    margin: 0 20px;
+    font-weight: 600;
+    display: inline-block;
+    opacity: 0;
+}
+.navigation li a:hover {
+    color: blue;
+    text-decoration-line: underline;
+}
+.navigation.active li a {
+    animation: slideRight 0.5s ease-in-out forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+.container {
+    position: absolute;
+    display: flex;
+    height: calc(100% - 200px);
+    width: calc(100% - 200px);
+    z-index: 100;
+}
+.container .box {
+    position: relative;
+    width: 25%;
+    height: 100%;
+    overflow: hidden;
+    border-right: 10px solid rgba(0, 0, 0, 0.1);  
+}
+.container .box:last-child {
+    border-right: none;
+}
+.container .box .imgBx {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+    opacity: 0;
+    animation: slideRight 0.5s ease-in-out forwards;
+    animation-delay: calc(0.2s * var(--i));
+}
+.container .box .imgBx.active {
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    width: calc(100% - 200px);
+    height: calc(100% - 200px);
+    z-index: 1000;
+    opacity: 1;;
+}
+.container .box .imgBx img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+}
+.container .box .imgBx:hover img {
+    transform: scale(1.2);
+}
+.container .box .imgBx.active:hover img {
+    transform: scale(1);
+}
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ /* animetion  */
+@keyframes slideRight {
+    0%
+    {
+        transform: translateX(150px);
+        opacity: 0;
+    }
+    100%
+    {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* footer */
+.socialMedia {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 0 100px;
+    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.sci li {
+    list-style: none;
+}
+li {
+    display: inline-block;
+}
+.sci li a {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333;
+    border-radius: 10px;
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 1.5em;
+    transform-style: preserve-3d;
+    perspective: 500px;
+    box-shadow: 0 25px 35px rgba(0, 0, 0, 0.1);
+    transition: background 0.25s;
+}
+.js-tilt-glare {
+    border-radius: 10px;
+}
+.sci li a:hover.facebook {
+    background: #1877f2;
+}
+.sci li a:hover.youtube {
+    background: #ff0000;
+}
+.sci li a:hover.twitter {
+    background: #0099ff;
+}
+.sci li a:hover.instagram {
+    background: #e4405f;
+}
+.sci li a .fa {
+    transition: 0.25s;
+    pointer-events: none;
+}
+.sci li a:hover .fa {
+    color: #fff;
+    transform: scale(1.75) translateZ(50px);
+}
+
+
+
+
+
